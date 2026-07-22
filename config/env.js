@@ -37,5 +37,7 @@ module.exports = Object.freeze({
   isProduction: nodeEnv === 'production',
   host: env.HOST || '0.0.0.0',
   port: positivePort(env.PORT, 5003),
-  corsOrigin: env.CORS_ORIGIN || (nodeEnv === 'production' ? '' : 'http://localhost:3000')
+  corsOrigin: env.CORS_ORIGIN || (nodeEnv === 'production' ? '' : 'http://localhost:3000'),
+  mongoUri: env.MONGODB_URI || 'mongodb://127.0.0.1:27017',
+  mongoDbName: env.MONGODB_DB_NAME || 'smart_shelf'
 });

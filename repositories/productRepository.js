@@ -1,21 +1,30 @@
-const fs = require('fs');
-const path = require('path');
+const Product = require('../models/Product');
 
-const DB_FILE = path.join(__dirname, '..', 'data', 'products.json');
+const plain = document => document.toJSON();
 
-function ensureDatabase() {
-  fs.mkdirSync(path.dirname(DB_FILE), { recursive: true });
-  if (!fs.existsSync(DB_FILE)) fs.writeFileSync(DB_FILE, '[]');
+async function getAll() {
+  return (await Product.find().sort({ createdAt: 1 })).map(plain);
 }
 
-function getAll() {
-  ensureDatabase();
-  return JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
+async function create(data) {
+  return plain(await Product.create(data));
 }
 
-function saveAll(products) {
-  ensureDatabase();
-  fs.writeFileSync(DB_FILE, JSON.stringify(products, null, 2));
+async function updateById(id, changes) {
+  const product = await Product.findByIdAndUpdate(id, changes, { new: true, runValidators: true });
+  return product ? plain(product) : null;
 }
 
-module.exports = { getAll, saveAll };
+async function deleteById(id) {
+  return Boolean(await Product.findByIdAndDelete(id));
+}
+
+async function count() {
+  return Product.countDocuments();
+}
+
+async function insertMany(products) {
+  return Product.insertMany(products.map(({ id, ...product }) => product));
+}
+
+module.exports = { getAll, create, updateById, deleteById, count, insertMany };

@@ -3,8 +3,8 @@ const { enrichProduct } = require('../services/productService');
 const { sendJson } = require('../utils/http');
 
 async function getPromotions(req, res) {
-  const promotions = productRepository
-    .getAll()
+  const promotions = (await productRepository
+    .getAll())
     .map(enrichProduct)
     .filter(product => product.discount > 0 && product.quantity > 0);
 

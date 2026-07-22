@@ -9,10 +9,10 @@ module.exports = async function productRoutes(req, res, url) {
     return true;
   }
 
-  const match = url.pathname.match(/^\/api\/products\/(\d+)$/);
+  const match = url.pathname.match(/^\/api\/products\/([a-f\d]{24})$/i);
   if (!match) return false;
 
-  const id = Number(match[1]);
+  const id = match[1];
   if (req.method === 'PUT') await productController.updateProduct(req, res, id);
   else if (req.method === 'DELETE') await productController.deleteProduct(req, res, id);
   else return false;

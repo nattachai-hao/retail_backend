@@ -3,7 +3,7 @@ const { enrichProduct } = require('../services/productService');
 const { sendJson } = require('../utils/http');
 
 async function getDashboard(req, res) {
-  const products = productRepository.getAll().map(enrichProduct);
+  const products = (await productRepository.getAll()).map(enrichProduct);
 
   sendJson(res, 200, {
     totalUnits: products.reduce((sum, product) => sum + product.quantity, 0),
