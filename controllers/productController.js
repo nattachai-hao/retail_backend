@@ -3,13 +3,13 @@ const { enrichProduct } = require('../services/productService');
 const { parseJsonBody, sendJson } = require('../utils/http');
 
 async function getProducts(req, res) {
-  sendJson(res, 200, (await productRepository.getAll()).map(enrichProduct));
+  sendJson(res, 200, (await productRepository.getAll()).map(enrichProduct), req);
 }
 
 async function createProduct(req, res) {
   const data = await parseJsonBody(req);
   if (!data.name || !data.expiryDate || Number(data.quantity) < 0 || Number(data.price) < 0) {
-    return sendJson(res, 400, { message: 'กรุณากรอกข้อมูลที่จำเป็นให้ถูกต้อง' });
+    return sendJson(res, 400, { message: 'กรุณากรอกข้อมูลที่จำเป็นให้ถูกต้อง' }, req);
   }
 
   const timestamp = Date.now();
@@ -22,7 +22,7 @@ async function createProduct(req, res) {
     expiryDate: data.expiryDate,
     image: data.image || '📦'
   });
-  sendJson(res, 201, enrichProduct(product));
+  sendJson(res, 201, enrichProduct(product), req);
 }
 
 async function updateProduct(req, res, id) {
@@ -33,13 +33,13 @@ async function updateProduct(req, res, id) {
   delete changes._id;
 
   const product = await productRepository.updateById(id, changes);
-  if (!product) return sendJson(res, 404, { message: 'ไม่พบสินค้า' });
-  sendJson(res, 200, enrichProduct(product));
+  if (!product) return sendJson(res, 404, { message: 'ไม่พบสินค้า' }, req);
+  sendJson(res, 200, enrichProduct(product), req);
 }
 
 async function deleteProduct(req, res, id) {
-  if (!(await productRepository.deleteById(id))) return sendJson(res, 404, { message: 'ไม่พบสินค้า' });
-  sendJson(res, 200, { message: 'ลบสินค้าแล้ว' });
+  if (!(await productRepository.deleteById(id))) return sendJson(res, 404, { message: 'ไม่พบสินค้า' }, req);
+  sendJson(res, 200, { message: 'ลบสินค้าแล้ว' }, req);
 }
 
 module.exports = { getProducts, createProduct, updateProduct, deleteProduct };

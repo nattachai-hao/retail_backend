@@ -8,7 +8,7 @@ async function getPromotions(req, res) {
     .map(enrichProduct)
     .filter(product => product.discount > 0 && product.quantity > 0);
 
-  sendJson(res, 200, promotions);
+  sendJson(res, 200, promotions, req);
 }
 
 module.exports = { getPromotions };

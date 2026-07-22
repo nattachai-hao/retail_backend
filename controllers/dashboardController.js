@@ -13,7 +13,7 @@ async function getDashboard(req, res) {
     expired: products.filter(product => product.status === 'expired').reduce((sum, product) => sum + product.quantity, 0),
     riskValue: products.reduce((sum, product) => sum + product.riskValue, 0),
     products: products.sort((a, b) => a.daysLeft - b.daysLeft)
-  });
+  }, req);
 }
 
 module.exports = { getDashboard };
