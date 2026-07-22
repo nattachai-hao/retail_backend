@@ -1,0 +1,10 @@
+{
+  "name": "smart-shelf-backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "NODE_ENV=production node server.js",
+    "start:local": "NODE_ENV=development node server.js",
+    "dev": "NODE_ENV=development node --watch server.js"
+  }
+}

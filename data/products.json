@@ -1,0 +1,122 @@
+[
+  {
+    "id": 2,
+    "name": "แซนด์วิชแฮมชีส",
+    "category": "อาหารพร้อมทาน",
+    "sku": "SND-014",
+    "quantity": 8,
+    "price": 45,
+    "expiryDate": "2026-07-23",
+    "image": "🥪"
+  },
+  {
+    "id": 3,
+    "name": "ขนมปังโฮลวีต",
+    "category": "เบเกอรี่",
+    "sku": "BRD-007",
+    "quantity": 15,
+    "price": 42,
+    "expiryDate": "2026-07-28",
+    "image": "🍞"
+  },
+  {
+    "id": 4,
+    "name": "โยเกิร์ตรสธรรมชาติ",
+    "category": "ผลิตภัณฑ์นม",
+    "sku": "YGT-003",
+    "quantity": 10,
+    "price": 25,
+    "expiryDate": "2026-07-25",
+    "image": "🥣"
+  },
+  {
+    "id": 5,
+    "name": "สลัดอกไก่",
+    "category": "อาหารพร้อมทาน",
+    "sku": "SLD-002",
+    "quantity": 4,
+    "price": 79,
+    "expiryDate": "2026-07-21",
+    "image": "🥗"
+  },
+  {
+    "id": 6,
+    "name": "น้ำส้มคั้นสด",
+    "category": "เครื่องดื่ม",
+    "sku": "JCE-011",
+    "quantity": 9,
+    "price": 49,
+    "expiryDate": "2026-08-03",
+    "image": "🍊"
+  },
+  {
+    "id": 7,
+    "name": "ไข่ไก่ออร์แกนิก",
+    "category": "วัตถุดิบสด",
+    "sku": "EGG-005",
+    "quantity": 24,
+    "price": 8,
+    "expiryDate": "2026-08-09",
+    "image": "🥚"
+  },
+  {
+    "id": 8,
+    "name": "เค้กช็อกโกแลต",
+    "category": "เบเกอรี่",
+    "sku": "CAK-009",
+    "quantity": 6,
+    "price": 85,
+    "expiryDate": "2026-07-20",
+    "image": "🍰"
+  },
+  {
+    "id": 9,
+    "name": "เต้าหู้ไข่",
+    "category": "วัตถุดิบสด",
+    "sku": "TOF-004",
+    "quantity": 18,
+    "price": 16,
+    "expiryDate": "2026-07-27",
+    "image": "🍢"
+  },
+  {
+    "id": 10,
+    "name": "กาแฟสกัดเย็น",
+    "category": "เครื่องดื่ม",
+    "sku": "COF-016",
+    "quantity": 11,
+    "price": 65,
+    "expiryDate": "2026-08-05",
+    "image": "☕"
+  },
+  {
+    "id": 1784700694840,
+    "name": "เค้ก",
+    "category": "เบเกอรี่",
+    "sku": "CAK-001",
+    "quantity": 1,
+    "price": 50,
+    "expiryDate": "2026-07-24",
+    "image": "📦"
+  },
+  {
+    "id": 1784700708985,
+    "name": "เค้ก",
+    "category": "เบเกอรี่",
+    "sku": "CAK-001",
+    "quantity": 1,
+    "price": 50,
+    "expiryDate": "2026-07-24",
+    "image": "📦"
+  },
+  {
+    "id": 1784700794607,
+    "name": "เค้ก",
+    "category": "เบเกอรี่",
+    "sku": "CAK-003",
+    "quantity": 1,
+    "price": 12,
+    "expiryDate": "2026-07-25",
+    "image": "📦"
+  }
+]
